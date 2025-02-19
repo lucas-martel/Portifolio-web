@@ -9,10 +9,38 @@ export type Hability = {
 
 export const HabilityData: Hability = {
   infos: [
-    { habType: "Técnicas", titles: ["word", "excel", "pedreira", "algebra", "fisica"] },
     {
-      habType: "Sociais",
-      titles: ["inteligente", "fofa", "estressada", "calma"],
+      habType: "Técnicas em frontend",
+      titles: ["nextjs", "react", "mockapi", "javascript", "axios"],
+    },
+    {
+      habType: "Técnicas em backend",
+      titles: [
+        "nodejs",
+        "prisma",
+        "mongodb",
+        "mysql",
+        "express",
+        "wasp Top 10",
+        "postman",
+      ],
+    },
+    {
+      habType: "Ferramentas",
+      titles: ["vscode", "docker", "docker-compose", "ngrok", "git", "github"],
+    },
+    {
+      habType: "soft skills",
+      titles: [
+        "boa comunicação",
+        "gosto de trabalho em equipe",
+        "empatia",
+        "ótimo ouvinte",
+      ],
+    },
+    {
+      habType: "Idiomas",
+      titles: ["portugues(nativo)", "Ingles(intermediário), espanho(básico)"],
     },
   ],
 };

@@ -26,7 +26,7 @@ function SelectHability(prop: Props) {
   }, [hab]);
 
   return (
-    <FormControl sx={{ width: "20%" }}>
+    <FormControl sx={{ width: "40%" }}>
       <InputLabel id="hab-label" sx={{ color: "yellow" }}>
         Habilidades
       </InputLabel>

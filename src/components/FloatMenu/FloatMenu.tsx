@@ -1,40 +1,51 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
 import { ButtonNavigation } from "../../datas/ButtonsNavigation";
 import StyledNavigationMenu from "./styledComponents/StyledNavigationMenu";
-
-type SectionName = "sobre" | "habilidades" | "objetivos" | "projetos" | "contato"; // Tipando as seções
+import { Link } from "react-scroll";
 
 interface Prop {
   title: string;
   subTitle: string;
-  buttons: ButtonNavigation;
-  onClickOption: (sectionName: SectionName) => void;
+  buttons: ButtonNavigation[];
 }
 
-function FloatMenu({ title, subTitle, buttons, onClickOption }: Prop) {
+function FloatMenu({ title, subTitle, buttons }: Prop) {
+  const theme = useTheme();
+
   return (
     <StyledNavigationMenu>
       <Box>
         <Typography
-          fontSize={"1em"}
+          fontSize={theme.spacing(2)}
           color="textPrimary"
-          fontFamily={"Kalam, cursive"}
+          fontWeight={900}
+          fontFamily="Poppins, sans-serif"
         >
           {title}
         </Typography>
         <Typography
-          fontSize={"0.7em"}
+          fontSize={theme.spacing(1)}
+          fontFamily="Poppins, sans-serif"
           color="textPrimary"
-          fontFamily={"Kalam, cursive"}
           marginLeft={"1em"}
+          fontWeight={700}
         >
           {subTitle}
         </Typography>
       </Box>
       <Stack direction={"row"} alignSelf={"flex-end"}>
-        {buttons.titles.map((title, index) => (
-          <Button key={index} variant="text" onClick={()=> onClickOption(title as SectionName)}>
-            {title}
+        {buttons.map((data, index) => (
+          <Button key={index} variant="text">
+            <Link
+              style={{ width: "100%", height: "100%" }}
+              to={data.id}
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={1000}
+            >
+              {data.title}
+            </Link>
           </Button>
         ))}
       </Stack>

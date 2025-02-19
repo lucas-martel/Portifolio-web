@@ -1,5 +1,5 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import Avatar from "../../../../assets/avatar3dflavia.png";
+import Avatar from "../../../../assets/eu.png";
 import { SobreMimData } from "../../../../datas/SobreMim";
 
 function SobreMim() {
@@ -10,15 +10,12 @@ function SobreMim() {
       <Box
         component="img"
         src={Avatar}
-        alt="Flavia feliz"
+        alt="Imagem de lucas"
         width={theme.spacing(30)}
         height="auto"
         sx={{ float: "left" }}
       />
-      <Typography
-        sx={{ whiteSpace: "pre-line" }}
-        color="black"
-      >
+      <Typography sx={{ whiteSpace: "pre-line" }} >
         {SobreMimData.text}
       </Typography>
     </Box>

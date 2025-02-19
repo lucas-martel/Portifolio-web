@@ -1,54 +1,39 @@
-import { useRef } from "react";
-import "./App.css";
+import { motion } from "framer-motion";
 import FloatMenu from "./components/FloatMenu/FloatMenu";
 import Section from "./components/Section/Section";
 import { ButtonNavigationData } from "./datas/ButtonsNavigation";
-import Teste from "./components/Section/Pages/Teste";
-import { Box, useTheme } from "@mui/material";
-import SobreMim from "./components/Section/Pages/SobreMim/SobreMim";
-import Habilidades from "./components/Section/Pages/Habilidades/Habilidades";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 
 function App() {
   const theme = useTheme();
 
-  const sectionsRefs = {
-    sobre: useRef<HTMLDivElement>(null),
-    habilidades: useRef<HTMLDivElement>(null),
-    objetivos: useRef<HTMLDivElement>(null),
-    projetos: useRef<HTMLDivElement>(null),
-    contato: useRef<HTMLDivElement>(null),
-  };
-
-  const onClickOption = (sectionName: keyof typeof sectionsRefs) => {
-    const sectionRef = sectionsRefs[sectionName];
-    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  const isLessThanLg = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
-    <>
+    <Box width={isLessThanLg ? "100vw" : "50vw"} ml={"auto"} mr={"auto"}>
       <FloatMenu
-        title="Eng. Civil"
-        subTitle="Flavia Colares"
-        onClickOption={onClickOption}
+        title="LC"
+        subTitle="Lucas Martel"
         buttons={ButtonNavigationData}
       />
-      <Box height={theme.spacing(12)}></Box>
-      <Section title="Sobre Mim" ref={sectionsRefs.sobre} marginBottom={theme.spacing(25)}>
-        <SobreMim />
-      </Section>
-      <Section title="Habilidades" ref={sectionsRefs.habilidades} marginBottom={theme.spacing(25)}>
-        <Habilidades />
-      </Section>
-      <Section title="Objetivos" ref={sectionsRefs.objetivos} marginBottom={theme.spacing(25)}>
-        <Teste />
-      </Section>
-      <Section title="Projetos" ref={sectionsRefs.projetos} marginBottom={theme.spacing(25)}>
-        <Teste />
-      </Section>
-      <Section title="Contato" ref={sectionsRefs.contato}>
-        <Teste />
-      </Section>
-    </>
+      {ButtonNavigationData.map((data) => (
+        <motion.div
+          key={`sect21${data.id}`}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Section
+            id={data.id}
+            title={data.title}
+            ref={null}
+            marginBottom={theme.spacing(data.hasMarginBotton ? 10 : 0)}
+          >
+            {<data.tag />}
+          </Section>
+        </motion.div>
+      ))}
+    </Box>
   );
 }
 

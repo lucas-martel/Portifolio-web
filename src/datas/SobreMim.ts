@@ -3,5 +3,5 @@ export type SobreMim = {
 };
 
 export const SobreMimData: SobreMim = {
-  text: "Olá! Meu nome é Flavia, também conhecida como flavinha da algebra. Estou cursando a faculdade de engenharia cívil na universidade federal do amazonas(UFAM).\n\nSou de tefé, uma cidade linda e incrível do interior do amazonas, morando em manaus. Sou apaixonada por livros e com eles pude descobrir minha área de interesse, a engenharia cívil.\nSou movida pela paixão de aprender mais e praticar meus conhecimentos que adquiro no curso.\nMeu maior sonho é dizer que engenheiros de software são os rapazes mais incriveis que existem, sem eles o mundo seria vazio e triste. Por isso amo cada um dos garotos de programa.\nUm breve resumo sobre você, sua trajetória até aqui, o que te inspirou a escolher Engenharia Civil e quais são suas áreas de interesse na engenharia.",
+  text: "Olá! Meu nome é Lucas Martel, também conhecido como Leonã. Estou cursando Engenharia de Software na Universidade Federal do Amazonas (UFAM).\n\nTenho experiência em programação web, utilizando tecnologias como React, Next.js (usado neste portfólio) e Node.js. Além disso, já atuei no desenvolvimento de jogos, mas atualmente meu foco está no desenvolvimento web. Sou apaixonado por escrever código de forma limpa e segura.\n\nAbaixo, você encontrará mais informações sobre minhas habilidades, objetivos e projetos.",
 };
